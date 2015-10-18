@@ -11,42 +11,44 @@ public class BinarySearchTree {
 			if(d.isMale() == true){
 				
 				 if (d.getHeight() < focusDancer.getHeight()) { //kui mehe pikkus lyhem
-				
-					 do {
+					 
+					// do {
 						 focusDancer = focusDancer.leftChild; // liigun lyhemate naiste poole
-					 } while (d.getHeight() > focusDancer.getHeight()); //kuni mees on naisest pikem	
-					 
-					 return focusDancer;
+					// } while (d.getHeight() > focusDancer.getHeight()); //kuni mees on naisest pikem	
 				 
-				 } else { //kui mees pikem
+				 } else if (d.getHeight() > focusDancer.getHeight()) { //kui mees pikem
 					 
-					 do {
+					 //do {
 						 focusDancer = focusDancer.rightChild; // liigun pikemate naiste juurde
-					 } while (d.getHeight() > focusDancer.getHeight()); // nii kaua kuni mees on veel naisest pikem
+						
+					 //} while (focusDancer.getHeight() < d.getHeight()); // nii kaua kuni mees on veel naisest pikem
 					 
-					 return focusDancer;
+				 } else if(d.getHeight() == focusDancer.getHeight()) {
+					 return null;
 				 }
 				 
 			} else if (d.isMale() == false) {
 				
 				if (d.getHeight() < focusDancer.getHeight()) { //kui naine mehest lyhem 
 					
-					do {
+					//do {
 						 focusDancer = focusDancer.leftChild; // liigun lyhemate meeste poole
-					 } while (d.getHeight() < focusDancer.getHeight()); //kuni naine veel on mehest lyhem
+						
+					 //} while (focusDancer.getHeight() > d.getHeight()); //kuni naine veel on mehest lyhem
+
+				} else if (d.getHeight() > focusDancer.getHeight()) { //kui naine pikem
 					
-					return focusDancer;
-					 
-				} else { //kui naine pikem
-					
-					do {
+					//do {
 						focusDancer = focusDancer.rightChild; // liigun pikemate meeste juurde
-					} while (d.getHeight() < focusDancer.getHeight()); // kuni naine saab mehest lyhemaks
-					 
-					return focusDancer;
-					 
-					}
-			}				
+				
+					//} while (d.getHeight() < focusDancer.getHeight()); // kuni naine saab mehest lyhemaks
+
+				} else if (d.getHeight() == focusDancer.getHeight()) {
+					return null;
+				}
+			}
+			
+			return focusDancer;
 		 }
 	
 		// Node not found

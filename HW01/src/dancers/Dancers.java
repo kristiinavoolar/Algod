@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Dancers implements IDancers {	
 	
-	public BinarySearchTree maleDancers;
-	public BinarySearchTree femaleDancers;
+	public BinarySearchTree maleDancers = new BinarySearchTree();
+	public BinarySearchTree femaleDancers = new BinarySearchTree();
 	
 	List<IDancer> withoutPartner = new ArrayList<IDancer>();
 		
