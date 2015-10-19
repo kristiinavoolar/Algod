@@ -34,7 +34,7 @@ public class Dancers implements IDancers {
 				withoutPartner.add(dancer);
 				return null;
 			} else {
-				withoutPartner.remove(dancer);
+				femaleDancers.removeDancer(partner);
 				return new SimpleEntry<IDancer, IDancer>(dancer, partner);
 			}
 		}else if (dancer.isMale() == false) {
@@ -44,7 +44,7 @@ public class Dancers implements IDancers {
 				withoutPartner.add(dancer);
 				return null;
 			} else {
-				withoutPartner.remove(dancer);
+				maleDancers.removeDancer(partner);
 				return new SimpleEntry<IDancer, IDancer>(dancer, partner);
 			} 
 		}
